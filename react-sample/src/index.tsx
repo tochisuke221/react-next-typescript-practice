@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Hellow from './components/Hello'
+// import Hellow from './components/Hello'
+import Parent from './components/ContainerSample'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -11,7 +12,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Hellow></Hellow>
+    {/* <Parent></Hellow> */}
+    <Parent></Parent>
   </React.StrictMode>
 );
 
