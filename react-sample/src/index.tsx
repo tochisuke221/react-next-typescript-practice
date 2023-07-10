@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 // import Hellow from './components/Hello'
-import Parent from './components/ContainerSample'
+// import Parent from './components/ContainerSample'
+import Counter from './components/Counter'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -13,7 +14,8 @@ root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Parent></Hellow> */}
-    <Parent></Parent>
+    {/* <Parent></Parent> */}
+    <Counter initialValue={5}/>
   </React.StrictMode>
 );
 
