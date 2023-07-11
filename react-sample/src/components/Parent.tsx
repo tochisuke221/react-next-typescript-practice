@@ -1,48 +1,56 @@
-import React, { memo, useState } from "react";
+import React, { useState, useCallback } from "react";
 
-type FizzProps = {
-  isFizz: boolean
+type ButtonProps = {
+  onClick: () => void
 }
 
-const Fizz = (props: FizzProps) => {
-  const { isFizz } = props
+const DecrementButton = (props: ButtonProps) => {
+  const { onClick } = props
 
-  console.log('Fizz 再描画されました')
+  console.log('DecrementButtonが描画されました')
 
-  return <span>{ isFizz ? 'Fizz' : '' }</span>
+  return <button onClick={onClick}>Decrement</button>
 }
 
-type BuzzProps = {
-  isBuzz: boolean
-}
+// メモ化しているが、propsのonClickがParent側で新しくなるため毎回描画される
+const IncrementButton = React.memo((props: ButtonProps) => {
+  debugger
+  const { onClick } = props
 
-const Buzz = memo<BuzzProps>((props) => {
-  const { isBuzz } = props
+  console.log('IncrementButtonが描画されました')
 
-  console.log('Buzzが再描画されました')
-
-  return <span>{ isBuzz ? 'Buzz' : '' }</span>
+  return <button onClick={onClick}>Increment</button>
 })
 
+const DoubleButton = React.memo((props: ButtonProps) => {
+  const { onClick } = props
+
+  console.log('DoubleButtonが描画されました');
+
+  return <button onClick={onClick}>DoubleButton</button>
+})
 
 export const Parent = () => {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(0)
 
-  const isFizz = count % 3 === 0
-  const isBuzz = count % 5 === 0
+  const decrement = () => {
+    setCount((c) => c - 1)
+  }
 
-  console.log(`Parentが再描画されました。count=${count}`)
+  const increment = () => {
+    setCount((c) => c + 1)
+  }
+  
+  const double = useCallback(()=>{
+    setCount((c) => c * 2)
+  }, [])
 
   return (
     <div>
-      <button onClick={()=> setCount((currentCount)=>(currentCount - 1))}>-1</button>
-      <button onClick={()=> setCount((currentCount)=>(currentCount + 1))}>+1</button>
-      <p>{`現在のカウント: ${count}`}</p>
-      <p>
-        <Fizz isFizz={isFizz}/>
-        <Buzz isBuzz={isBuzz}/>
-      </p>
+      <p>Count: {count}</p>
+      <DecrementButton onClick={decrement}></DecrementButton>
+      <IncrementButton onClick={increment}></IncrementButton>
+      <DoubleButton onClick={double}></DoubleButton>
     </div>
   )
-
 }
