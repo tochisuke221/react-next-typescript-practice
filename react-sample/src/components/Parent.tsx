@@ -14,7 +14,6 @@ const DecrementButton = (props: ButtonProps) => {
 
 // メモ化しているが、propsのonClickがParent側で新しくなるため毎回描画される
 const IncrementButton = React.memo((props: ButtonProps) => {
-  debugger
   const { onClick } = props
 
   console.log('IncrementButtonが描画されました')
