@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { UseMemoSample } from './components/useMemoSample';
 // import App from './App';
 // import Hellow from './components/Hello'
 // import Parent from './components/ContainerSample'
@@ -12,9 +13,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-
-  <Parent></Parent>
-
+  <UseMemoSample></UseMemoSample>
 );
 
 // If you want to start measuring performance in your app, pass a function
