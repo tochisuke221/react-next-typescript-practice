@@ -6,14 +6,15 @@ import { UseMemoSample } from './components/useMemoSample';
 // import Hellow from './components/Hello'
 // import Parent from './components/ContainerSample'
 // import Counter from './components/Counter'
-import { Parent } from './components/Parent'
+// import { Parent } from './components/Parent'
+import { Clock } from './components/useEffectSample'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <UseMemoSample></UseMemoSample>
+  <Clock></Clock>
 );
 
 // If you want to start measuring performance in your app, pass a function
