@@ -9,14 +9,15 @@ import { UseMemoSample } from './components/useMemoSample';
 // import { Parent } from './components/Parent'
 // import { Clock } from './components/useEffectSample'
 // import { Parent } from './components/useContextSample'
-import { ImageUploader } from './components/useRefSample'
+// import { ImageUploader } from './components/useRefSample'
+import { Input } from './components/CustomHook'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <ImageUploader />
+  <Input />
 );
 
 // If you want to start measuring performance in your app, pass a function
