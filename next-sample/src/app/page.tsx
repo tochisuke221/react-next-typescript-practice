@@ -1,5 +1,14 @@
+'use client';
+
 import Image from 'next/image'
 import styles from './page.module.css'
+import styled from 'styled-components'
+
+const H1 = styled.h1`
+    font-size: 1.5em;
+    text-align: center;
+    color: palevioletred;
+  `;
 
 export default function Home() {
   return (
@@ -28,15 +37,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div>
+        <H1>
+          Welcom to <a href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app">Next.js</a>
+        </H1>
       </div>
 
       <div className={styles.grid}>
