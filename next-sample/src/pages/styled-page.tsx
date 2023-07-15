@@ -1,17 +1,51 @@
 import { NextPage } from 'next'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
-// spna要素にスタイルを適用したコンポーネント
-const Badge = styled.span`
-  padding: 8px 16px;
+
+// const mixIn = css`
+//   font-weight: bold;
+// `
+
+// type ButtonProps = {
+//     color: string
+//     backgroundColor: string
+// }
+
+// const Button = styled.button<ButtonProps>`
+//   color: ${(props)=> props.color};
+//   background: ${(props)=> props.backgroundColor};
+//   border: 2px solid ${(props)=> props.color};
+
+//   font-size: 2em;
+//   margin: 1em;
+//   padding: 0.25em 1em;
+//   border-radius: 8px;
+//   cursor: pointer;
+//   ${mixIn}
+// `
+
+const Text = styled.p`
+  color: blue;
   font-weight: bold;
-  color: white;
-  background: red;
-  border-radius: 16px;
 `
 
+const BorderdText = styled(Text)`
+  padding: 8px 16px;
+  border: 3px solid blue;
+  border-radius: 8px;
+`
+
+
 const styledPage: NextPage = () => {
-  return <Badge>Hello, Styled Page</Badge>
+  return (
+    <div>
+        <Text>テキスト１</Text>
+        <BorderdText>テキスト１</BorderdText>
+        <Text as="a" href="/"> Go to Index</Text>
+        {/* <Button backgroundColor="transparent" color="#FF0000">Button1</Button> */}
+        {/* <Button backgroundColor="#1E90FF" color="white">Button2</Button> */}
+    </div>
+  )
 }
 
 export default styledPage
