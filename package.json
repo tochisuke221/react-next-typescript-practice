@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.27"
+  }
+}
