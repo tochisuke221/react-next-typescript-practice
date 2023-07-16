@@ -31,7 +31,9 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import { StyledButton } from '../components/StyledButton'
+import  MDXDocument  from './StyledButton.mdx'
 // import StyledButton from './StyledButton';
+import { linkTo } from '@storybook/addon-links'
 
 const meta = {
   title: 'StyledButton',
@@ -45,16 +47,23 @@ const meta = {
        control: { type: 'text' },
      },
      onClick: { action: 'clicked' } 
-   }
+  },
+  parameters: {
+      docs: {
+        page: MDXDocument,
+      }
+  }
 } as Meta<typeof StyledButton>;
 
+
 export default meta;
+
 
 type Story = StoryObj<typeof StyledButton>;
 
 export const Button: Story = {
   render: (props) => {
-    return <StyledButton  {...props}></StyledButton>
+    return <StyledButton  {...props} onClick={linkTo('StyledButton', 'Transparent')}></StyledButton>
   },
 };
 
